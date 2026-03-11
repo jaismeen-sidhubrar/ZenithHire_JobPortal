@@ -1,0 +1,49 @@
+{% extends 'jobseeker/jobseeker_base.html' %}
+{% load static %}
+
+{% block style %}
+<style>
+p{
+    color: black;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-12 px-6 md:px-20 text-white">
+    <div class="p-8 rounded-lg shadow-lg" style="background-color: whitesmoke;">
+        <h1 class="text-3xl font-bold mb-4" style="text-align: center; color: #2e58a7;">{{ job.jobtitle }}</h1>
+        <p class="text-lg mb-2"><span class="font-semibold">Company:</span> {{ job.company_name }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Location:</span> {{ job.joblocation }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Type:</span> {{ job.job_type }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Salary:</span> {{ job.salary }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Industry:</span> {{ job.industry }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Experience Level:</span> {{ job.experience_level }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Education Level:</span> {{ job.education_level }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Remote Work:</span> {{ job.remote_work }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Application Deadline:</span> {{ job.application_deadline }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Skills/Keywords:</span> {{ job.skills_keywords }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Benefits:</span> {{ job.benefits }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Company Values:</span> {{ job.company_values }}</p>
+        <p class="text-lg mb-2"><span class="font-semibold">Contact Info:</span> {{ job.contact_info }}</p>
+        <div class="mt-6">
+            <h2 class="text-xl font-bold mb-2" style="color: #2e58a7">Job Description</h2>
+            <p style="color:black">{{ job.job_description }}</p>
+        </div>
+        <div class="mt-6">
+            <h2 class="text-xl font-bold mb-2" style="color: #2e58a7">Requirements</h2>
+            <p style="color:black">{{ job.job_requirements }}</p>
+        </div>
+        <div class="mt-6">
+            <h2 class="text-xl font-bold mb-2" style="color: #2e58a7">Application Process</h2>
+            <p style="color:black">{{ job.application_process }}</p>
+        </div>
+        <br>
+        <strong><hr></strong>
+        <br>
+        <strong><p>Posted by: {{ job.user.username }}</p></strong>
+
+        <a href="{% url 'findjob' %}" class="mt-8 inline-block px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-white font-bold">Back to Job Listings</a>
+    </div>
+</div>
+{% endblock %}

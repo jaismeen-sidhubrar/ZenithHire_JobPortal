@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenithHire</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <style>
+        /* Make hero section responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                height: auto;
+            }
+    
+            .hero-content {
+                width: 100% !important;
+                padding: 20px;
+                text-align: center;
+            }
+    
+            .hero-image img {
+                height: auto;
+                max-height: 300px;
+            }
+        }
+    
+        /* Responsive QnA Section */
+        @media (max-width: 768px) {
+            .qna-container {
+                padding: 10px;
+            }
+    
+            .question h3 {
+                font-size: 18px;
+            }
+    
+            .question p {
+                font-size: 14px;
+            }
+        }
+    
+        /* Responsive About Section */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+    
+            .about-container img {
+                width: 80px;
+                margin-bottom: 15px;
+            }
+        }
+    
+        /* Make the main content stretch full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    
+        main {
+            flex: 1;
+        }
+    
+        footer {
+            margin-top: auto;
+        }
+    
+        /* Responsive testimonial section */
+        @media (max-width: 768px) {
+            .testimonial {
+                flex-direction: column;
+                text-align: center;
+            }
+    
+            .testimonial-image {
+                margin-top: 20px;
+            }
+    
+            .testimonial img {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>    
+</head>
+
+
+
+
+
+
+
+<body>
+    <header>
+        <nav class="bg-gray-800 shadow-md sticky top-0 left-0 right-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+               
+                <div class="flex items-center space-x-3">
+                    <img src="{% static 'images/nav_logo.jpeg' %}" alt="ZenithHire Logo" class="w-10 h-10 rounded-full">
+                    <span class="text-white font-bold text-xl">ZenithHire</span>
+                </div>
+        
+                <button id="menu-toggle" class="text-white text-2xl md:hidden focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+        
+                <div id="menu"
+                     class="hidden md:flex flex-col md:flex-row absolute md:static top-full left-0 w-full md:w-auto bg-gray-800 md:bg-transparent text-white md:space-x-6 space-y-4 md:space-y-0 p-4 md:p-0 z-40 transition-all duration-300">
+                    <a href="{% url 'home' %}" class="hover:text-blue-400 block">Home</a>
+                    <a href="{% url 'login' %}" class="hover:text-blue-400 block">Login</a>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+
+
+
+    <main style="background-color:#212a36;">
+
+        <!-- hero section -->
+        <section class="hero relative w-full h-[60vh] flex flex-col md:flex-row items-center">
+            <div class="hero-content w-1/2 p-8 text-white">
+                <h1 class="text-4xl font-bold mb-4">Welcome to ZenithHire</h1>
+                <p class="text-lg mb-6">Connecting talented students with top recruiters. Start your journey today!</p>
+                <a href="{% url 'signup' %}" class="bg-blue-500 text-white py-2 px-4 rounded-lg text-xl hover:bg-blue-600 transition">Get
+                    Started</a>
+            </div>
+
+            <div class="hero-image" style="height:100%;">
+                <img src="{% static 'images/home.gif' %}" alt="student recruiter" class="w-full h-full object-cover"
+                    height="100%" />
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <!-- About Us Section -->
+        <section id="about-us">
+            <div class="about-container">
+                <div class="logo-container">
+                    <img src="{% static 'images/logo.png' %}" alt="ZenithHire Logo" id="logo">
+                </div>
+                <div class="text-container">
+                    <h2>About Us</h2>
+                    <p>
+                        ZenithHire is a comprehensive job portal designed to connect employers with job seekers in an
+                        intuitive,
+                        efficient manner. Our mission is to provide a seamless platform for professionals to discover
+                        new career
+                        opportunities, enhance their skills, and grow their professional networks. We understand the
+                        importance
+                        of a great match between candidates and employers, which is why we offer advanced search
+                        filters,
+                        personalized recommendations, and a user-friendly interface. Whether you're an individual
+                        looking for
+                        your dream job or a company searching for top talent, ZenithHire makes the process easy,
+                        effective, and
+                        impactful.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- QNA -->
+        <section class="qna">
+            <h2 style="color:#fff;text-align: center; font-size: 30px; margin-bottom:20px;">Frequently Asked Questions
+            </h2>
+            <div class="qna-container">
+                <div class="question">
+                    <h3>How do I create an account?</h3>
+                    <p>You can create an account by clicking on the "Get Started" button and filling in the required
+                        details.
+                    </p>
+                </div>
+                <div class="question">
+                    <h3>Is ZenithHire free to use?</h3>
+                    <p>Yes, job seekers can use ZenithHire for free. Employers may have premium options available.</p>
+                </div>
+                <div class="question">
+                    <h3>How can I contact support?</h3>
+                    <p>You can reach out to our support team through the "Contact Us" page or email us at
+                        support@zenithhire.com.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2 style="color:#fff;text-align: center; font-size: 30px; margin-bottom:20px;">Customer Experiences That
+                Inspire Us</h2>
+                <div class="testimonial flex flex-col md:flex-row items-center justify-between px-4">
+                <div class="testimonial-text">
+                    <p>"ZenithHire helped me land my dream job! The platform connects you with top employers, making job
+                        hunting
+                        so much easier. Highly recommend!"</p>
+                    <p class="name">Alia Gupta</p>
+                    <p class="location">India</p>
+                </div>
+                <div class="testimonial-image">
+                    <img src="https://globalventuring.com//content/uploads/2023/03/Sonam-Jain-landscape.png"
+                        alt="Alia Gupta" class="rounded-img">
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+
+
+
+
+
+    <footer style="background-color: #394354;" class="text-white py-12 px-6 md:px-20">
+        <div class="container mx-auto flex flex-col items-center text-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-6xl">
+
+                <div class="md:ml-30">
+                    <h2 class="text-xl font-bold">Contact Us</h2>
+                    <p class="mt-2 text-gray-300">Email: support@ZenithHire.com</p>
+                    <p class="text-gray-300">Phone: +1 (123) 456-7890</p>
+                    <p class="text-gray-300">Address: 123 ZenithHire , Job City, India</p>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold">Follow Us</h2>
+                    <div class="mt-2 flex space-x-4 justify-center">
+                        <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook text-2xl"></i></a>
+                        <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="hover:text-blue-400"><i class="fab fa-linkedin text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-500 mt-8 pt-4 text-center text-gray-300 w-full max-w-6xl">
+                <p>&copy; 2025 ZenithHire. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+    
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    
+
+</body>
+
+</html>

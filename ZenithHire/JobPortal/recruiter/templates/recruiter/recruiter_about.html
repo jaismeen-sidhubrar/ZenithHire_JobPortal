@@ -1,0 +1,61 @@
+{% extends 'recruiter/recruiter_base.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+
+<!-- About Us Section -->
+<section class="content-container">
+    <h2><strong>About Us</strong></h2>
+    <p>Zenith Hire is an innovative platform that connects exceptional talent with forward-thinking companies. Founded with a mission to revolutionize the job search process, our platform offers a seamless, efficient, and intuitive way for job seekers to discover career opportunities while helping employers find the right candidates to fit their teams.</p>
+
+    <p>We are a group of passionate professionals driven by the goal of creating a better future for the workforce. Our platform allows job seekers to explore a wide variety of job listings, while employers can access a curated pool of candidates that perfectly match their needs. Whether you're looking to take the next step in your career or build a winning team, Zenith Hire has got you covered.</p>
+
+    
+    <p>At Zenith Hire, we care about the success of our users. Our dedicated customer support team is always ready to assist job seekers and employers, making sure that their experience on our platform is smooth and hassle-free.</p>
+</section>
+
+
+
+<!-- Founders Section -->
+<section class="founders-container">
+    <div class="founder-box">
+        <img src="{% static 'images/jaismeen.png' %}" alt="Jaismeen Kaur">
+        <div>
+            <h3>Jaismeen Kaur</h3>
+            <p>Founder & CEO</p>
+            <div class="social-links">
+                <a href="https://twitter.com/JaismeenKaur" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/JaismeenKaur" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:jaismeen@zenithhire.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="founder-box">
+        <img src="{% static 'images/manmeet.png' %}" alt="Manmeet Kaur">
+        <div>
+            <h3>Manmeet Kaur</h3>
+            <p>Co-Founder & CTO</p>
+            <div class="social-links">
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:manmeet@zenithhire.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+</section>
+
+
+
+{% endblock %}

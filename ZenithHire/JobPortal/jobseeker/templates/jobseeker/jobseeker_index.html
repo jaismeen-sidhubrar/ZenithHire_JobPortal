@@ -1,0 +1,250 @@
+{% extends 'jobseeker/jobseeker_base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<!-- hero section -->
+<section class="hero relative w-full h-[60vh] flex items-center">
+    <div class="hero-content w-1/2 p-8 text-white">
+        <h1 class="text-4xl font-bold mb-4">Welcome to ZenithHire</h1>
+        <p class="text-lg mb-6">Connecting talented students with top recruiters. Start your journey today!</p>
+    </div>
+
+    <div class="hero-image" style="height:100%;">
+        <img src="{% static 'images/js_home.png' %}" alt="student recruiter"
+            class="w-full h-full object-cover" height="100%" />
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- Partner Logos Section -->
+<section class="partners bg-gray-100 py-10">
+    <div class="container mx-auto px-4">
+        <h2 class="text-center text-2xl font-bold mb-8">Our Trusted Partners</h2>
+        <div class="logos-wrapper overflow-hidden relative">
+            <div class="logos-container flex animate-slide">
+
+                <div class="partner-logo">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.arezqGrVeKUAmuKTaXGGEgHaEK&pid=Api&P=0&h=180"
+                        alt="Google" class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.pinimg.com/originals/01/ca/da/01cada77a0a7d326d85b7969fe26a728.jpg" alt="Amazon"
+                        class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.zKJhnhtnKTj_9I--GATiqAHaEP&pid=Api&P=0&h=180"
+                        alt="Infosys" class="h-12">
+                </div>
+
+                <div class="partner-logo">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.Y832vt01HvoSBcbOCQnAigHaEh&pid=Api&P=0&h=180"
+                        alt="Tata" class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.0Eb1VUFSOSpcwYlahbfHLAHaHa&pid=Api&P=0&h=180"
+                        alt="Microsoft" class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.sWSPghjzvfUYfQpqXbo37wHaIo&pid=Api&P=0&h=180"
+                        alt="Apple" class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.aYVbqEFb2M-SWsBh_LafIQHaHa&pid=Api&P=0&h=180"
+                        alt="Facebook">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.mE32TkR-yeG0iVCX94iavwHaEK&pid=Api&P=0&h=180"
+                        alt="IBM">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.6XgzPwXD7yAoDh5MHUebdwHaB8&pid=Api&P=0&h=180"
+                        alt="Accenture">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- About Us Section -->
+<section id="about-us">
+    <div class="about-container">
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}" alt="ZenithHire Logo" id="logo">
+        </div>
+        <div class="text-container">
+            <h2>About Us</h2>
+            <p>
+                ZenithHire is a comprehensive job portal designed to connect employers with job seekers in an intuitive,
+                efficient manner. Our mission is to provide a seamless platform for professionals to discover new career
+                opportunities, enhance their skills, and grow their professional networks. We understand the importance
+                of a great match between candidates and employers, which is why we offer advanced search filters,
+                personalized recommendations, and a user-friendly interface. Whether you're an individual looking for
+                your dream job or a company searching for top talent, ZenithHire makes the process easy, effective, and
+                impactful.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- services -->
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+        <div class="service-card">
+            <i class="fas fa-search"></i>
+            <h3>Smart Job Matching</h3>
+            <p>AI-driven matching based on skills, experience, and preferences.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-file-alt"></i>
+            <h3>Resume Builder</h3>
+            <p>Create and optimize your resume with AI-driven suggestions.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-bell"></i>
+            <h3>Instant Job Alerts</h3>
+            <p>Get notified about the latest job opportunities in real time.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-handshake"></i>
+            <h3>Networking</h3>
+            <p>Connect with employers and industry professionals easily.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Career Guidance</h3>
+            <p>Access career coaching, interview tips, and skill development resources.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Analytics & Insights</h3>
+            <p>Track your job applications and interview progress effectively.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- portfolio -->
+<section class="portfolio">
+    <h2>Our Portfolio</h2>
+    <div class="portfolio-container">
+        <div class="portfolio-item">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.53JB0xXVNrKQoVTq1Ns0hwHaE8&pid=Api&P=0&h=180" alt="Successful Placement">
+            <h3>Asher - Hired at google</h3>
+            <p>Successfully placed as a Software Engineer.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://www.helpside.com/wp-content/uploads/2021/01/AdobeStock_238255151-2048x1365.jpeg" alt="Successful Placement">
+            <h3>Chestha - Hired at Microsoft</h3>
+            <p>Successfully placed as a Data Scientist.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- QNA -->
+<section class="qna">
+    <h2 style="color:#fff;text-align: center; font-size: 30px; margin-bottom:20px;">Frequently Asked Questions</h2>
+    <div class="qna-container">
+        <div class="question">
+            <h3>How do I search for jobs on ZenithHire?</h3>
+            <p>You can search for jobs by using the search bar on the homepage and applying filters like location, role, or industry.</p>
+        </div>
+        <div class="question">
+            <h3>Can I apply for jobs without uploading a resume?</h3>
+            <p>It is recommended to upload a resume to improve your chances of getting shortlisted, but you can still browse and save jobs without it.</p>
+        </div>
+        <div class="question">
+            <h3>How will I know if a recruiter has viewed my application?</h3>
+            <p>You’ll receive a notification on your dashboard once your application has been viewed by the recruiter.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <h2 style="color:#fff;text-align: center; font-size: 30px; margin-bottom:20px;">Customer Experiences That Inspire Us
+    </h2>
+    <div class="testimonial">
+        <div class="testimonial-text">
+            <p>"ZenithHire helped me land my dream job! The platform connects you with top employers, making job hunting
+                so much easier. Highly recommend!"</p>
+            <p class="name">Alia Gupta</p>
+            <p class="location">India</p>
+        </div>
+        <div class="testimonial-image">
+            <img src="https://globalventuring.com//content/uploads/2023/03/Sonam-Jain-landscape.png" alt="Alia Gupta"
+                class="rounded-img">
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <div class="testimonial-text">
+            <p>"I found not only a job but also a community. ZenithHire provides great resources to help you build your
+                career and stay connected with industry professionals."</p>
+            <p class="name">Alisha Watts</p>
+            <p class="location">Canada</p>
+        </div>
+        <div class="testimonial-image">
+            <img src="https://www.irealife.com/cdn/shop/articles/How_To_Dress_Formal_for_Women.jpg?v=1718109380"
+                alt="Alisha Watts" class="rounded-img">
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <div class="testimonial-text">
+            <p>"ZenithHire made my job search so much easier with its tailored job recommendations and easy-to-use
+                interface. I found a perfect match within weeks!"</p>
+            <p class="name">Manpreet Singh</p>
+            <p class="location">India</p>
+        </div>
+        <div class="testimonial-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiEQOcT5y2-inLu1h-bTUByw_o-iP1nMLEfw&s"
+                alt="yuvraj singh" class="rounded-img">
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

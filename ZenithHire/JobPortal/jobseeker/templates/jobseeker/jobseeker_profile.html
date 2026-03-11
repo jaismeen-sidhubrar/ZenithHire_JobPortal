@@ -1,0 +1,47 @@
+{% extends 'jobseeker/jobseeker_base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div style="padding:30px;">
+    <div class="profile-card">
+        <div class="text-center">
+            {% if user.profile_picture %}
+            <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="img-fluid rounded-circle"
+                style="width: 150px; height: 150px; object-fit: cover;">
+            {% else %}
+            <img src="{% static 'images/default_profile.png' %}" alt="Profile Picture" class="img-fluid rounded-circle"
+                style="width: 150px; height: 150px; object-fit: cover;">
+            {% endif %}
+        </div>
+
+
+        <h1><strong>{{ user.username }}</strong></h1>
+        <p class="text-muted">{{ user.role|capfirst }}</p>
+
+        <div class="profile-info">
+            <ul class="list-group list-group-flush">
+                <li><strong>Email:</strong> {{ user.email }}</li>
+                <li><strong>Phone:</strong> {{ user.phone }}</li>
+                <li><strong>Education:</strong> {{ user.education_level}}</li>
+                <li><strong>Current Job:</strong> {{ user.current_job_title }}</li>
+                <li><strong>Experience:</strong> {{ user.experience }}</li>
+                <li><strong>Bio:</strong> {{ user.bio }}</li>
+            </ul>
+        </div>
+
+        <br>
+        
+        <a href="{% url 'js_edit_profile' %}" class="btn btn-secondary">Edit Profile</a>
+               
+
+        <div class="logout-btn">
+            <a href="{% url 'logout' %}" class="btn btn-alert">Logout</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

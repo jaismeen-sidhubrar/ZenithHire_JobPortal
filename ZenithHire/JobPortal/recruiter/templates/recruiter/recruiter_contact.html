@@ -1,0 +1,72 @@
+{% extends 'recruiter/recruiter_base.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="contact-container">
+
+    <div class="contact-image">
+        <img src="{% static 'images/contactus.gif' %}" alt="contact_us">
+    </div>
+
+
+    <div class="contact-form-container">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Please fill out the form below, and we will get in touch with you as soon as
+            possible.</p>
+        <!--Display Success Message-->
+        {% if messages %}
+        <div id="flash-message">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <!-- Display Error Message -->
+        {% if error_msg %}
+        <div style="color: red;">
+            <strong>{{ error_msg }}</strong>
+        </div>
+        <br>
+        {% endif %}
+        <form class="contact-form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+
+
+    </div>
+</div>
+
+
+<script>
+    setTimeout(function () {
+        const msg = document.getElementById("flash-message");
+        if (msg) {
+            msg.style.display = "none";
+        }
+    }, 5000);
+</script>
+
+
+{% endblock %}

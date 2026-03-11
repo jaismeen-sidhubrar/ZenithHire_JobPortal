@@ -1,0 +1,176 @@
+{% extends 'recruiter/recruiter_base.html' %}
+
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<!-- hero section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 style="font-size:40px;">Find the Perfect Candidate</h1>
+        <p>Post jobs, manage applicants, and hire smarter with ZenithHire's powerful recruitment tools.</p>
+    </div>
+    <div class="hero-image">
+        <img src="{% static 'images/r_home.png' %}" alt="Recruitment Illustration">
+    </div>
+</section>
+
+<!-- partners -->
+<section class="partners bg-gray-100 py-10">
+    <div class="container mx-auto px-4">
+        <h2 class="text-center text-2xl font-bold mb-8">Our Hiring Partners</h2>
+        <div class="logos-wrapper overflow-hidden relative">
+            <div class="logos-container flex animate-slide">
+
+                <div class="partner-logo">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.arezqGrVeKUAmuKTaXGGEgHaEK&pid=Api&P=0&h=180"
+                        alt="Google" class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.pinimg.com/originals/01/ca/da/01cada77a0a7d326d85b7969fe26a728.jpg" alt="Amazon"
+                        class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.zKJhnhtnKTj_9I--GATiqAHaEP&pid=Api&P=0&h=180"
+                        alt="Infosys" class="h-12">
+                </div>
+
+                <div class="partner-logo">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.Y832vt01HvoSBcbOCQnAigHaEh&pid=Api&P=0&h=180"
+                        alt="Tata" class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.0Eb1VUFSOSpcwYlahbfHLAHaHa&pid=Api&P=0&h=180"
+                        alt="Microsoft" class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.sWSPghjzvfUYfQpqXbo37wHaIo&pid=Api&P=0&h=180"
+                        alt="Apple" class="h-12">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.aYVbqEFb2M-SWsBh_LafIQHaHa&pid=Api&P=0&h=180"
+                        alt="Facebook">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.mE32TkR-yeG0iVCX94iavwHaEK&pid=Api&P=0&h=180"
+                        alt="IBM">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.6XgzPwXD7yAoDh5MHUebdwHaB8&pid=Api&P=0&h=180"
+                        alt="Accenture">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- about us -->
+<section id="about-us">
+    <div class="about-container">
+        <div class="logo-container">
+            <img src="{% static 'images/logo.png' %}" alt="ZenithHire Logo" id="logo">
+        </div>
+        <div class="text-container">
+            <h2>About Us</h2>
+            <p>At ZenithHire, we empower recruiters to discover, assess, and hire top talent efficiently. Our platform is designed to simplify your hiring process — whether you're a startup or a large enterprise. Find skilled candidates, streamline communication, and grow your dream team with us.</p>
+        </div>
+    </div>
+</section>
+
+<!-- services -->
+<section class="services">
+    <h2>What We Offer</h2>
+    <div class="services-container">
+        <div class="service-card">
+            <i class="fas fa-briefcase"></i>
+            <h3>Post Job Listings</h3>
+            <p>Reach thousands of candidates instantly by posting jobs with just a few clicks.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-user-check"></i>
+            <h3>Applicant Tracking</h3>
+            <p>Manage applications with built-in tracking tools and filter candidates efficiently.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Smart Analytics</h3>
+            <p>Get detailed insights into your job listings, applicants, and hiring funnel.</p>
+        </div>
+    </div>
+</section>
+
+<!-- portfolio -->
+<section class="portfolio">
+    <h2>Success Stories</h2>
+    <div class="portfolio-container">
+        <div class="portfolio-item">
+            <img src="{% static 'images/r_portfolio.png' %}" alt="Success 1">
+            <h3>Rapid Hiring for TechNova</h3>
+            <p>Filled 5 tech roles in under 10 days using ZenithHire’s platform.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="{% static 'images/r_portfolio2.png' %}" alt="Success 2">
+            <h3>Scaling Teams for Startups</h3>
+            <p>Startups saved time and money by accessing our curated talent pool.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="{% static 'images/r_portfolio3.png' %}" alt="Success 3">
+            <h3>Enterprise Recruitment Simplified</h3>
+            <p>Enterprise clients streamlined their multi-department hiring in one place.</p>
+        </div>
+    </div>
+</section>
+
+<!-- QNA -->
+<section class="qna">
+    <h4 style="text-align: center;font-size: 30px;color: white;">Frequently Asked Questions</h4>
+    <div class="qna-container">
+        <div class="question">
+            <h3>How do I post a job?</h3>
+            <p>Once you create a recruiter account, navigate to the dashboard and click "Post a Job."</p>
+        </div>
+        <div class="question">
+            <h3>How can I track applicants?</h3>
+            <p>Use our integrated applicant tracking system to view and manage all your candidates in one place.</p>
+        </div>
+        <div class="question">
+            <h3>Can I get analytics for my listings?</h3>
+            <p>Yes, detailed reports are available to help you understand performance and reach.</p>
+        </div>
+    </div>
+</section>
+
+<!-- tetsimonials -->
+<section class="testimonials">
+    <h2 style="color:#fff;text-align: center; font-size: 30px; margin-bottom:20px;">Customer Experiences That Inspire Us</h2>
+    <div class="testimonial">
+        <div class="testimonial-text">
+            <p>"ZenithHire has made our hiring process faster and smarter. We filled three roles in under a week!"</p>
+            <p class="name">Alisha Watts</p>
+            <p class="location">HR Manager, TechNova Inc.</p>
+        </div>
+        <div class="testimonial-image">
+            <img src="{% static 'images/customer1.png' %}" alt="Alisha Watts" class="rounded-img">
+        </div>
+    </div>
+
+    <div class="testimonial">
+        <div class="testimonial-text">
+            <p>"The analytics and filtering options saved us so much time. It’s like having an entire HR team online."</p>
+            <p class="name">Mark Green</p>
+            <p class="location">Talent Head, FinEdge</p>
+        </div>
+        <div class="testimonial-image">
+            <img src="{% static 'images/customer2.png' %}" alt="Mark Green" class="rounded-img">
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'recruiter/recruiter_base.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="edit-profile-container">
+    <h2>Edit Profile</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group mb-3">
+            <label for="current_job_title">Current Job Title</label>
+            <input type="text" class="form-control" name="current_job_title" id="current_job_title"
+                   value="{{ user.current_job_title }}">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="experience">Experience (in years)</label>
+            <input type="number" class="form-control" name="experience" id="experience"
+                   value="{{ user.experience }}">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="bio">Bio</label>
+            <textarea name="bio" class="form-control" id="bio" rows="4">{{ user.bio }}</textarea>
+        </div>
+
+        <div class="form-group mb-3 text-center">
+            {% if user.profile_picture %}
+            <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="img-fluid rounded-circle mb-2"
+                 style="width: 100px; height: 100px; object-fit: cover;">
+            {% endif %}
+            <label for="profile_picture">Change Profile Picture</label>
+            <input type="file" class="form-control" name="profile_picture" id="profile_picture">
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-success">Save Changes</button>
+            <br><br>
+            <a href="{% url 'r_profile' %}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

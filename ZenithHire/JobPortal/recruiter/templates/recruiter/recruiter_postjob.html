@@ -1,0 +1,208 @@
+{% extends 'recruiter/recruiter_base.html' %}
+
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/postjob.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<h3 class="text-center text-light m-0" style="font-size: 35px;color:white;">POST JOB</h3>
+
+
+<div class="main-container">
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <div class="text-red-600 text-sm mb-2">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="jobtitle">Job Title:</label>
+                        <input type="text" id="jobtitle" name="jobtitle" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="joblocation">Job Location:</label>
+                        <input type="text" id="joblocation" name="joblocation" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="job_type">Job Type:</label>
+                        <select id="job_type" name="job_type" class="form-control">
+                            <option value="full_time">Full-Time</option>
+                            <option value="part_time">Part-Time</option>
+                            <option value="contract">Contract</option>
+                            <option value="internship">Internship</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="salary">Salary/Compensation:</label>
+                        <input type="text" id="salary" name="salary" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="job_description">Job Description:</label>
+                        <textarea id="job_description" name="job_description" rows="3" class="form-control"
+                            required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="job_requirements">Job Requirements:</label>
+                        <textarea id="job_requirements" name="job_requirements" rows="3" class="form-control"
+                            required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="education_level">Education Level:</label>
+                        <select id="education_level" name="education_level" class="form-control">
+                            <option value="high_school">High School</option>
+                            <option value="bachelor">Bachelor's</option>
+                            <option value="master">Master's</option>
+                            <option value="doctorate">Doctorate</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="experience_level">Experience Level:</label>
+                        <select id="experience_level" name="experience_level" class="form-control">
+                            <option value="entry">Entry-Level</option>
+                            <option value="mid">Mid-Level</option>
+                            <option value="senior">Senior-Level</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="industry">Industry:</label>
+                        <input type="text" id="industry" name="industry" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="company_name">Company Name:</label>
+                        <input type="text" id="company_name" name="company_name" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="company_website">Company Website:</label>
+                        <input type="url" id="company_website" name="company_website" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="application_process">How to Apply:</label>
+                        <textarea id="application_process" name="application_process" rows="2" class="form-control"
+                            required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="application_deadline">Application Deadline:</label>
+                        <input type="date" id="application_deadline" name="application_deadline" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="required_documents">Required Documents:</label>
+                        <input type="text" id="required_documents" name="required_documents"
+                            placeholder="e.g. Resume, Cover Letter..." class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="skills_keywords">Skills/Keywords:</label>
+                        <input type="text" id="skills_keywords" name="skills_keywords" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="work_authorization">Work Authorization:</label>
+                        <input type="text" id="work_authorization" name="work_authorization" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="remote_work">Open to Remote Work?</label>
+                        <select id="remote_work" name="remote_work" class="form-control">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="benefits">Benefits:</label>
+                        <textarea id="benefits" name="benefits" rows="2" class="form-control"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="company_values">Company Culture and Values:</label>
+                        <textarea id="company_values" name="company_values" rows="2" class="form-control"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contact_info">Contact Information:</label>
+                        <input type="text" id="contact_info" name="contact_info" class="form-control">
+                    </div>
+
+                    <input type="submit" value="POST JOB" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="job-table-container">
+    <h3 class="job-table-title">Jobs Posted</h3>
+    <table class="job-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Type</th>
+                <th>Salary</th>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Applicants</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr>
+                <td>{{ job.jobtitle }}</td>
+                <td>{{ job.joblocation }}</td>
+                <td>{{ job.job_type }}</td>
+                <td>{{ job.salary }}</td>
+                <td>{{ job.company_name }}</td>
+                <td>{{ job.contact_info }}</td>
+                <td><a href="{% url 'job_applicants' job.id %}" class="text-blue-400 hover:underline">
+                        View Applicants
+                    </a>
+                </td>
+                <td>
+                    <form method="post" action="{% url 'delete_job' job.id %}" style="display:inline;" 
+                          onsubmit="return confirm('Are you sure you want to delete this job?');">
+                      {% csrf_token %}
+                      <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs">
+                        Delete
+                      </button>
+                    </form>
+                  </td>
+              
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8" style="text-align:center;">No jobs posted yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
