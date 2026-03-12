@@ -110,10 +110,4 @@ This project demonstrates:
 - Job application workflow design
 - Email notification integration
 
----
 
-## Author
-
-Jaismeen  
-BE CSE (Artificial Intelligence)  
-Chitkara University, Punjab
