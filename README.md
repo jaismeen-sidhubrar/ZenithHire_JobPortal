@@ -22,7 +22,7 @@ Admin:
 
 Authentication is handled using Django's built-in authentication system with email-based login.
 
-Email Notification System
+Email Notification System : 
     The platform integrates an email notification system that automatically sends messages when users:
     Register for a new account
     Log into the system
@@ -31,24 +31,7 @@ Email Notification System
 
 System Architecture
 ZenithHire follows the Model View Template (MVT) architecture used by Django.
-
-User Request
-     │
-     ▼
-URL Routing
-     │
-     ▼
-Views (Business Logic)
-     │
-     ▼
-Models (Database Interaction)
-     │
-     ▼
-Templates (Frontend Rendering)
-     │
-     ▼
-Response to User
-
+User Request -> URL Routing -> Views (Business Logic) -> Models (Database Interaction) -> Templates (Frontend Rendering) -> Response to User
 
 
 Tech Stack
@@ -72,25 +55,25 @@ Tech Stack
 
 
 Application Workflow:
-User Registration
+User Registration : 
     A new user registers using the signup form.
     The user selects their role (Jobseeker or Recruiter).
     The system sends an email confirmation.
     The user can now log in.
 
-Job Posting
+Job Posting : 
     Recruiters log into the recruiter dashboard.
     Recruiters create a new job posting.
     The job becomes visible to job seekers.
 
-Job Application
+Job Application : 
     Jobseekers browse available jobs.
     Jobseekers apply for suitable jobs.
     Recruiters can view applicants for each job posting.
 
 
 
-Security Implementation
+Security Implementation : 
     Django authentication system
     Password hashing
     Role-based access control
@@ -98,7 +81,7 @@ Security Implementation
     Form validation for user input
 
 
-Learning Outcomes
+Learning Outcomes : 
     Through this project, the following concepts were implemented:
     Full stack web development using Django
     Role-based authentication systems
